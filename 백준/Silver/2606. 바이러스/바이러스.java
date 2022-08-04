@@ -42,10 +42,9 @@ public class Main {
 			}
 		}
 		
-		System.out.println(res);
-//		bw.write(String.valueOf(res));
-//		bw.flush();
-//		bw.close();
+		bw.write(String.valueOf(res));
+		bw.flush();
+		bw.close();
 		br.close();
 	}
 }
