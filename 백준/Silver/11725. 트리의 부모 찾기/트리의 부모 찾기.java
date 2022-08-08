@@ -34,7 +34,6 @@ public class Main {
 			node[b].add(a);
 		}
 		
-		visit[1] = true;
 		dfs(1);
 		
 		for (int i = 2; i < N; i++) {
@@ -48,9 +47,10 @@ public class Main {
 	}
 
 	private static void dfs(int parent) {
+		visit[parent] = true;
+		
 		for (int child : node[parent]) {
 			if (!visit[child]) {
-				visit[child] = true;
 				result[child] = parent;
 				dfs(child);
 			}
