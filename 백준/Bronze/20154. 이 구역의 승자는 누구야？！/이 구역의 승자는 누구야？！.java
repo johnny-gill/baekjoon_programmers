@@ -7,12 +7,9 @@ public class Main {
 	public static void main(String[] args) throws IOException {
     	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     	String str = br.readLine();
-    	int length = str.length();
-
-    	int sum = alpha[str.charAt(0) - 'A'];
-    	for (int i = 1; i < length; i++) {
+    	int sum = 0;
+    	for (int i = 0; i < str.length(); i++) {
     		 sum += alpha[str.charAt(i) - 'A'];
-    		 sum = (sum > 10) ? sum % 10 : sum;
     	}
     	
     	System.out.println((sum % 2 == 0)? "You're the winner?" : "I'm a winner!");
