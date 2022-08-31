@@ -20,8 +20,12 @@ public class Main {
     	
     	List<String> keyList = new ArrayList<>(map.keySet());
     	
+    	StringBuilder sb = new StringBuilder();
+    	
     	for (String key : keyList) {
-			System.out.println(key + " " + map.get(key));
+    		sb.append(key).append(" ").append(map.get(key)).append("\n");
 		}
+    	
+    	System.out.println(sb);
     }
 }
