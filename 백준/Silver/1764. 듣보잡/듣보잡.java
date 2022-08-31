@@ -3,9 +3,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
+import java.util.Set;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -16,21 +16,21 @@ public class Main {
     	int N = Integer.parseInt(st.nextToken());
     	int M = Integer.parseInt(st.nextToken());
     	
-    	Map<String, Integer> map = new HashMap<>();
+    	Set<String> set = new HashSet<>();
     	for (int i = 0; i < N; i++) {
-    		map.put(br.readLine(), 1);
+    		set.add(br.readLine());
     	}
     	
-    	List<String> list = new ArrayList<>();
+    	List<String> result = new ArrayList<>();
     	for (int i = 0; i < M; i++) {
     		String str = br.readLine();
-			if (map.containsKey(str)) {
-				list.add(str);
+			if (set.contains(str)) {
+				result.add(str);
 			}
     	}
     	
-    	Collections.sort(list);
-    	System.out.println(list.size());
-    	list.forEach(t -> System.out.println(t));
+    	Collections.sort(result);
+    	System.out.println(result.size());
+    	result.forEach(t -> System.out.println(t));
     }
 }
